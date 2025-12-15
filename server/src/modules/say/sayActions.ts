@@ -1,7 +1,8 @@
 import type { RequestHandler } from "express";
 
 const welcome: RequestHandler = (req, res) => {
-  res.send("Welcome to wild series!");
+  console.info(req.query);
+  res.send(`Welcome to wild series, ${req.query.name}${req.query.lastname}`);
 };
 
 export default { welcome };
